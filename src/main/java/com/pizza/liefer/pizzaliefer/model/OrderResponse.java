@@ -14,4 +14,20 @@ public class OrderResponse {
 		this.orderMsg = orderMsg;
 	}
 
+	public Long getOrderNum() {
+		return orderNum;
+	}
+
+	public void setOrderNum(Long orderNum) {
+		this.orderNum = orderNum;
+	}
+
+	public String getOrderMsg() {
+		return orderMsg;
+	}
+
+	public void setOrderMsg(String orderMsg) {
+		this.orderMsg = orderMsg;
+	}
+
 }

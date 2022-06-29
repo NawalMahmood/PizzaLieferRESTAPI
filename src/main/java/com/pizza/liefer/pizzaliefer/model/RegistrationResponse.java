@@ -14,4 +14,20 @@ public class RegistrationResponse {
 		this.registrationMsg = registrationMsg;
 	}
 
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
+	public String getRegistrationMsg() {
+		return registrationMsg;
+	}
+
+	public void setRegistrationMsg(String registrationMsg) {
+		this.registrationMsg = registrationMsg;
+	}
+
 }
