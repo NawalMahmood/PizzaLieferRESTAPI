@@ -17,7 +17,7 @@ public class CustomerOrder {
 
 	@Column(name = "Order_Id")
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@JsonProperty("Customer_Id")
@@ -28,6 +28,7 @@ public class CustomerOrder {
 	@Column(name = "Delivery_Address")
 	private String address;
 
+	@JsonProperty("Status")
 	@Column(name = "Status")
 	private String status;
 

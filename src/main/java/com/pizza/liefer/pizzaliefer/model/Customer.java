@@ -23,7 +23,7 @@ public class Customer {
 
 	@Column(name = "Customer_Id")
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@JsonProperty("Full_Name")

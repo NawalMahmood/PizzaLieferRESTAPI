@@ -72,8 +72,8 @@ public class CustomerOrdersController {
 
 		CustomerOrder order = deserializeRequest(request);
 		ordersService.saveOrder(order);
-		OrderResponse response = new OrderResponse(order.getId(), ORDER_PLACED);
 
+		OrderResponse response = new OrderResponse(order.getId(), ORDER_PLACED);
 		return new ResponseEntity<OrderResponse>(response, HttpStatus.OK);
 	}
 
