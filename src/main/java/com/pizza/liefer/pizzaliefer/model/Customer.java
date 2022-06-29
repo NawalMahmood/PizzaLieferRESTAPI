@@ -23,21 +23,24 @@ public class Customer {
 
 	@Column(name = "Customer_Id")
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@JsonProperty("Full_Name")
-	@Column(name = "name")
+	@Column(name = "Name")
 	@NotBlank(message = "Name must not be null or blank")
 	private String name;
 
+	@JsonProperty("Address")
 	@Column(name = "Address")
 	private String address;
 
+	@JsonProperty("Telephone")
 	@Column(name = "Telephone")
-	@Size(min = 10, max = 10)
+	@Size(min = 5, max = 15)
 	private String telephone;
 
+	@JsonProperty("Email")
 	@Column(name = "Email")
 	@Email(message = "Email must be in a valid format")
 	private String email;
@@ -46,6 +49,8 @@ public class Customer {
 	@Column(name = "Customer_Since", nullable = false, updatable = false)
 	private Date joinDate;
 
+	@JsonProperty("Payment_Card_Number")
+	@Column(name = "PaymentCard")
 	@CreditCardNumber(ignoreNonDigitCharacters = true)
 	private String creditCardNumber;
 

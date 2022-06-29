@@ -2,20 +2,18 @@ package com.pizza.liefer.pizzaliefer.service;
 
 import java.util.List;
 
-import com.pizza.liefer.pizzaliefer.model.Order;
+import com.pizza.liefer.pizzaliefer.model.CustomerOrder;
 
 public interface OrdersService {
 
-	List<Order> getOrders();
+	List<CustomerOrder> getOrders();
 
-	void saveOrder(Order order);
+	void saveOrder(CustomerOrder order);
 
-	Order getOrder(Long id);
+	CustomerOrder getOrder(Long id);
 
 	void deleteOrder(Long id);
 
-	void updateOrder(Order order);
-
-	// List<Order> getOrdersByAddress(String address);
+	void updateOrder(CustomerOrder order);
 
 }

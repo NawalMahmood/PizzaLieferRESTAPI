@@ -3,9 +3,10 @@ package com.pizza.liefer.pizzaliefer.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pizza.liefer.pizzaliefer.model.Order;
+import com.pizza.liefer.pizzaliefer.model.CustomerOrder;
 import com.pizza.liefer.pizzaliefer.model.Transaction;
 import com.pizza.liefer.pizzaliefer.repository.OrderRepository;
 import com.pizza.liefer.pizzaliefer.repository.TransactionRepository;
@@ -13,17 +14,19 @@ import com.pizza.liefer.pizzaliefer.repository.TransactionRepository;
 @Service
 public class OrdersServiceImpl implements OrdersService {
 
+	@Autowired
 	OrderRepository orderRepo;
+	@Autowired
 	TransactionRepository transRepo;
 
 	@Override
-	public List<Order> getOrders() {
+	public List<CustomerOrder> getOrders() {
 
 		return orderRepo.findAll();
 	}
 
 	@Override
-	public void saveOrder(Order order) {
+	public void saveOrder(CustomerOrder order) {
 
 		order.setStatus("Being Prepared");
 		orderRepo.save(order);
@@ -46,9 +49,9 @@ public class OrdersServiceImpl implements OrdersService {
 	}
 
 	@Override
-	public Order getOrder(Long id) {
+	public CustomerOrder getOrder(Long id) {
 
-		Optional<Order> order = orderRepo.findById(id);
+		Optional<CustomerOrder> order = orderRepo.findById(id);
 		if (order.isPresent()) {
 			return order.get();
 		}
@@ -68,12 +71,12 @@ public class OrdersServiceImpl implements OrdersService {
 	}
 
 	@Override
-	public void updateOrder(Order order) {
+	public void updateOrder(CustomerOrder order) {
 
 		orderRepo.save(order);
 	}
 
-	private Double calculateTransAmount(Order order) {
+	private Double calculateTransAmount(CustomerOrder order) {
 
 		Double price = 10.0; // Each pizza costs 10 euro, irrespective of number of toppings
 		return price;
