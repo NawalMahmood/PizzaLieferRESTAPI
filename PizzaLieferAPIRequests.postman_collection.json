@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "08e56303-91e4-4e78-94cb-b4207c6c1986",
+		"name": "PizzaLieferAPIRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST request to register a new customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Full_Name\": \"Sheev Palpatine\",\r\n    \"Address\": \"100 Coruscant Road, Capital City, Coruscant\",\r\n    \"Telephone\": \"111222333\",\r\n    \"Email\": \"emperor@galactic.empire.com\",\r\n    \"Payment_Card_Number\": \"999-888-77777\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST request to place a new pizza order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Customer_Id\": 12,\r\n    \"Address\": \"100 Coruscant Road, Capital City, Coruscant\",\r\n    \"Status\": \"Requested\",\r\n    \"Ananas\": true,\r\n    \"Broccoli\": true,\r\n    \"Champignons\": false,\r\n    \"Gorgonzola\": false,\r\n    \"Gyrosfleisch\": false,\r\n    \"Hackfleisch\": false,\r\n    \"Knoblauch\": false,\r\n    \"Mozzarella\": false,\r\n    \"Oliven\": false,\r\n    \"Pepperoni\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET request to retrieve an order by order id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/order/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT request to modify a previous pizza order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Customer_Id\": 12,\r\n    \"Address\": \"100 Coruscant Road, Capital City, Coruscant\",\r\n    \"Status\": \"Requested\",\r\n    \"Ananas\": true,\r\n    \"Broccoli\": true,\r\n    \"Champignons\": false,\r\n    \"Gorgonzola\": false,\r\n    \"Gyrosfleisch\": true,\r\n    \"Hackfleisch\": true,\r\n    \"Knoblauch\": true,\r\n    \"Mozzarella\": true,\r\n    \"Oliven\": false,\r\n    \"Pepperoni\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/order/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE request to delete a previous pizza order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/order/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
