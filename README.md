@@ -15,3 +15,11 @@ The implemented endpoints are:
 6. DELETE "/order/{id}" (deletes a previous order if it has not already been dispatched).
 
 The project contains a POSTMAN file in the root directory which provides example API requests.
+
+SUGGESTIONS FOR FUTURE IMPROVEMENT:
+
+One limitation of this implementation is that is contains no authentication mechanism, and hence no way for a customer to delete his or her account. Once JWT authentication is added, an endpoint will be added for a customer to delete their details from the database.
+
+The implementation only allows a customer to order a single pizza, as it uses the same model class to hold both the ordering customer details and the pizza toppings details. The next improvement will be to separate the model classes: one class to hold customer delivery details, and another class to hold pizza toppings details. Each customer order class will contain a List<Pizza>, and this will be mapped to appropriate database entities. The database schema will require modifications.
+
+Even though Spring Boot provides bean validation with the @Valid annotation, I want to add my own bean validator that will give me more control over InvalidArgumentExceptions thrown. Strange validation errors have been an issue during testing with Postman.
